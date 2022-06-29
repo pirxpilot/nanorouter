@@ -4,18 +4,18 @@
   "repository": "pirxpilot/nanorouter",
   "version": "0.0.0",
   "browser": {
-    "assert": "nanoassert"
+    "assert": "@pirxpilot/nanoassert"
   },
   "scripts": {
     "test": "standard && tape test.js"
   },
   "dependencies": {
-    "nanoassert": "^1.1.0",
-    "wayfarer": "^7.0.0"
+    "@pirxpilot/nanoassert": "^1.0.0",
+    "@pirxpilot/wayfarer": "^1.0.0"
   },
   "devDependencies": {
-    "standard": "^9.0.1",
-    "tape": "^4.8.0"
+    "standard": "~17",
+    "tape": "~5"
   },
   "keywords": [
     "router",
