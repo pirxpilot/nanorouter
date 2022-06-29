@@ -1,49 +1,46 @@
-var assert = require('assert')
-var wayfarer = require('@pirxpilot/wayfarer')
+const assert = require('assert')
+const wayfarer = require('@pirxpilot/wayfarer')
+
+module.exports = nanorouter
 
 // electron support
-var isLocalFile = (/file:\/\//.test(
+const isLocalFile = (/file:\/\//.test(
   typeof window === 'object' &&
   window.location &&
   window.location.origin
 ))
 
-/* eslint-disable no-useless-escape */
-var electron = '^(file:\/\/|\/)(.*\.html?\/?)?'
-var protocol = '^(http(s)?(:\/\/))?(www\.)?'
-var domain = '[a-zA-Z0-9-_\.]+(:[0-9]{1,5})?(\/{1})?'
-var qs = '[\?].*$'
-/* eslint-enable no-useless-escape */
+const stripElectron = /^(file:\/\/|\/)(.*\.html?\/?)?/
+const prefix = /^(http(s)?(:\/\/))?(www\.)?[a-zA-Z0-9-_.]+(:[0-9]{1,5})?(\/{1})?/
+const normalize = /#/
+const suffix = /'[?].*$'/
 
-var stripElectron = new RegExp(electron)
-var prefix = new RegExp(protocol + domain)
-var normalize = new RegExp('#')
-var suffix = new RegExp(qs)
+function nanorouter (opts = {}) {
+  const router = wayfarer(opts.default || '/404')
 
-module.exports = Nanorouter
+  return {
+    on,
+    emit,
+    match
+  }
 
-function Nanorouter (opts) {
-  if (!(this instanceof Nanorouter)) return new Nanorouter(opts)
-  opts = opts || {}
-  this.router = wayfarer(opts.default || '/404')
-}
+  function on (routename, listener) {
+    assert(typeof routename === 'string')
+    routename = routename.replace(/^[#/]/, '')
+    router.on(routename, listener)
+  }
 
-Nanorouter.prototype.on = function (routename, listener) {
-  assert.equal(typeof routename, 'string')
-  routename = routename.replace(/^[#/]/, '')
-  this.router.on(routename, listener)
-}
+  function emit (routename) {
+    assert(typeof routename === 'string')
+    routename = pathname(routename, isLocalFile)
+    return router.emit(routename)
+  }
 
-Nanorouter.prototype.emit = function (routename) {
-  assert.equal(typeof routename, 'string')
-  routename = pathname(routename, isLocalFile)
-  return this.router.emit(routename)
-}
-
-Nanorouter.prototype.match = function (routename) {
-  assert.equal(typeof routename, 'string')
-  routename = pathname(routename, isLocalFile)
-  return this.router.match(routename)
+  function match (routename) {
+    assert(typeof routename === 'string')
+    routename = pathname(routename, isLocalFile)
+    return router.match(routename)
+  }
 }
 
 // replace everything in a route but the pathname and hash
