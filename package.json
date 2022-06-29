@@ -1,23 +1,19 @@
 {
-  "name": "nanorouter",
+  "name": "@pirxpilot/nanorouter",
   "description": "Smol frontend router",
-  "repository": "choojs/nanorouter",
-  "version": "4.0.0",
+  "repository": "pirxpilot/nanorouter",
+  "version": "0.0.0",
   "browser": {
     "assert": "nanoassert"
   },
   "scripts": {
-    "deps": "dependency-check . && dependency-check . --extra --no-dev -i nanoassert",
-    "start": "node .",
-    "test": "standard && npm run deps && tape test.js"
+    "test": "standard && tape test.js"
   },
   "dependencies": {
     "nanoassert": "^1.1.0",
     "wayfarer": "^7.0.0"
   },
   "devDependencies": {
-    "dependency-check": "^2.8.0",
-    "nyc": "^10.1.2",
     "standard": "^9.0.1",
     "tape": "^4.8.0"
   },
@@ -25,5 +21,8 @@
     "router",
     "frontend",
     "browser"
+  ],
+  "files": [
+    "index.js"
   ]
 }

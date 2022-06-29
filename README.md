@@ -1,12 +1,14 @@
-# nanorouter [![stability][0]][1]
-[![npm version][2]][3] [![build status][4]][5]
-[![downloads][8]][9] [![js-standard-style][10]][11]
+[![NPM version][npm-image]][npm-url]
+[![Build Status][build-image]][build-url]
+[![Dependency Status][deps-image]][deps-url]
+# @pirxpilot/nanorouter
 
+Fork of [nanorouter].
 Smol frontend router
 
 ## Usage
 ```js
-var nanorouter = require('nanorouter')
+var nanorouter = require('@pirxpilot/nanorouter')
 var router = nanorouter({ default: '/404' })
 
 router.on('/foo', function (params) {
@@ -62,15 +64,13 @@ alongside `router()`.
 ## License
 [MIT](https://tldrlegal.com/license/mit-license)
 
-[0]: https://img.shields.io/badge/stability-experimental-orange.svg?style=flat-square
-[1]: https://nodejs.org/api/documentation.html#documentation_stability_index
-[2]: https://img.shields.io/npm/v/nanorouter.svg?style=flat-square
-[3]: https://npmjs.org/package/nanorouter
-[4]: https://img.shields.io/travis/choojs/nanorouter/master.svg?style=flat-square
-[5]: https://travis-ci.org/choojs/nanorouter
-[6]: https://img.shields.io/codecov/c/github/choojs/nanorouter/master.svg?style=flat-square
-[7]: https://codecov.io/github/choojs/nanorouter
-[8]: http://img.shields.io/npm/dm/nanorouter.svg?style=flat-square
-[9]: https://npmjs.org/package/nanorouter
-[10]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
-[11]: https://github.com/feross/standard
+[nanorouter]: https://npmjs.org/package/nanorouter
+
+[npm-image]: https://img.shields.io/npm/v/@pirxpilot/nanorouter
+[npm-url]: https://npmjs.org/package/@pirxpilot/nanorouter
+
+[build-url]: https://github.com/pirxpilot/nanorouter/actions/workflows/check.yaml
+[build-image]: https://img.shields.io/github/workflow/status/pirxpilot/nanorouter/check
+
+[deps-image]: https://img.shields.io/librariesio/release/npm/@pirxpilot/nanorouter
+[deps-url]: https://libraries.io/npm/@pirxpilot%2Fnanorouter
