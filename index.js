@@ -1,5 +1,5 @@
 var assert = require('assert')
-var wayfarer = require('wayfarer')
+var wayfarer = require('@pirxpilot/wayfarer')
 
 // electron support
 var isLocalFile = (/file:\/\//.test(
