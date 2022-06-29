@@ -2,7 +2,7 @@
   "name": "@pirxpilot/nanorouter",
   "description": "Smol frontend router",
   "repository": "pirxpilot/nanorouter",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "browser": {
     "assert": "@pirxpilot/nanoassert"
   },
