@@ -1,21 +1,23 @@
 {
   "name": "@pirxpilot/nanorouter",
-  "description": "Smol frontend router",
-  "repository": "pirxpilot/nanorouter",
+  "description": "Small frontend router",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pirxpilot/nanorouter.git"
+  },
   "version": "1.0.0",
   "browser": {
     "assert": "@pirxpilot/nanoassert"
   },
   "scripts": {
-    "test": "standard && tape test.js"
+    "test": "make check"
   },
   "dependencies": {
     "@pirxpilot/nanoassert": "^1.0.0",
     "@pirxpilot/wayfarer": "^1.0.0"
   },
   "devDependencies": {
-    "standard": "~17",
-    "tape": "~5"
+    "@biomejs/biome": "^1.9.4"
   },
   "keywords": [
     "router",
