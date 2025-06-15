@@ -4,12 +4,13 @@
 # @pirxpilot/nanorouter
 
 Fork of [nanorouter].
-Smol frontend router
+Small frontend router
 
 ## Usage
 ```js
-var nanorouter = require('@pirxpilot/nanorouter')
-var router = nanorouter({ default: '/404' })
+import nanorouter from '@pirxpilot/nanorouter';
+
+const router = nanorouter({ default: '/404' })
 
 router.on('/foo', function (params) {
   console.log('hit /foo')

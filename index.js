@@ -1,7 +1,5 @@
-const assert = require('assert');
-const wayfarer = require('@pirxpilot/wayfarer');
-
-module.exports = nanorouter;
+import assert from 'assert';
+import wayfarer from '@pirxpilot/wayfarer';
 
 // electron support
 const isLocalFile = /file:\/\//.test(typeof window === 'object' && window.location && window.location.origin);
@@ -11,7 +9,7 @@ const prefix = /^(http(s)?(:\/\/))?(www\.)?[a-zA-Z0-9-_.]+(:[0-9]{1,5})?(\/{1})?
 const normalize = /#/;
 const suffix = /'[?].*$'/;
 
-function nanorouter(opts = {}) {
+export default function nanorouter(opts = {}) {
   const router = wayfarer(opts.default || '/404');
 
   return {

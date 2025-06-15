@@ -1,6 +1,8 @@
 {
   "name": "@pirxpilot/nanorouter",
   "description": "Small frontend router",
+  "type": "module",
+  "exports": "./index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pirxpilot/nanorouter.git"
@@ -13,8 +15,8 @@
     "test": "make check"
   },
   "dependencies": {
-    "@pirxpilot/nanoassert": "^1.0.0",
-    "@pirxpilot/wayfarer": "^1.0.0"
+    "@pirxpilot/nanoassert": "~1",
+    "@pirxpilot/wayfarer": "~2"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4"
