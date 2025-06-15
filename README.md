@@ -70,7 +70,7 @@ alongside `router()`.
 [npm-url]: https://npmjs.org/package/@pirxpilot/nanorouter
 
 [build-url]: https://github.com/pirxpilot/nanorouter/actions/workflows/check.yaml
-[build-image]: https://img.shields.io/github/workflow/status/pirxpilot/nanorouter/check
+[build-image]: https://img.shields.io/github/actions/workflow/status/pirxpilot/nanorouter/check.yaml?branch=main
 
 [deps-image]: https://img.shields.io/librariesio/release/npm/@pirxpilot/nanorouter
 [deps-url]: https://libraries.io/npm/@pirxpilot%2Fnanorouter
