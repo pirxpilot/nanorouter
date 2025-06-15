@@ -1,5 +1,5 @@
-const test = require('node:test');
-const nanorouter = require('./');
+import test from 'node:test';
+import nanorouter from './index.js';
 
 function noop() {}
 
